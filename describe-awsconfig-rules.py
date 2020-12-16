@@ -11,7 +11,7 @@ try:
     response = config.describe_config_rules()
     for rule in response['ConfigRules']:
         print('\n\r' + str(rule))
-        print('\n\r' + str(rule))
+        
 except ClientError as e:
     print(e)
 
