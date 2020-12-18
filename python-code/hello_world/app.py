@@ -4,7 +4,6 @@ import boto3
 from botocore.exceptions import ClientError
 # import requests
 
-
 def lambda_handler(event, context):
     """Sample pure Lambda function
     Parameters
@@ -25,13 +24,12 @@ def lambda_handler(event, context):
     # except requests.RequestException as e:
     #     # Send some context about this error to Lambda Logs
     #     print(e)
-
     #     raise e
 
     #session = boto3.Session(aws_access_key_id='read from ENV',aws_secret_access_key='REad from Env')
     #config = session.client('config',region_name='us-east-1')
 
-
+    """ When running provide your profile name like this commnad >> sam local invoke -e .\events\event.json --profile aws-profilename-admin """
     config = boto3.client('config')
     try:
         response = config.describe_config_rules()
